@@ -17,7 +17,7 @@
   + Stack
     + _
   + Queue
-    + [Queue_Heap]()
+    + [Queue_Heap](./DataStructure/queue_heap.md)
 * **비선형 자료구조 (NonLinear)**
   + Graph
     + _
