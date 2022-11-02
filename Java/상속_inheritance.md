@@ -219,6 +219,6 @@ public class Dog extends Animal{
 // static method in Dog
 ```
 > Dog 참조 변수를 통하여 정적 메소드를 호출하면 자식 클래스의 정적 메소드가 호출 된다. <br>Animal 참조 변수를 통하여 정적 메소드를 호출하면 부모 클래스의 정적 메소드가 호출된다.
-
-🔺 2022.11.01.
+***
+🔺 2022. 11. 01.
 
