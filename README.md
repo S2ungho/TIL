@@ -3,7 +3,6 @@
 ## 📌 Java
 * 클래스(Class)
 * OPP(Object- Oriented Programming)
-*
 * [상속(Inheritance)](./Java/%EC%83%81%EC%86%8D_inheritance.md)
 * [다형성](./Java/)
 ## 📌 Python
