@@ -7,7 +7,7 @@
   + [상속과 접근 지정자](./Java/%EC%83%81%EC%86%8D_%EC%A0%91%EA%B7%BC%EC%A7%80%EC%A0%95%EC%9E%90.md)
   + [상속과 생성자](./Java/%EC%83%81%EC%86%8D_%EC%83%9D%EC%84%B1%EC%9E%90.md)
   + [메소드 오버라이딩(method overriding)](./Java/method_overriding.md)
-* **다형성**
+* **다형성(polymorphism)**
 ## 📌 Python
 * 
 ## 📌 Data Structure
