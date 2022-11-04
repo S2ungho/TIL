@@ -11,7 +11,7 @@
   + [메소드 오버라이딩(method overriding)](./Java/method_overriding.md)
   + [다형성](./Java/다형성_Polymorphism.md)
 ## 📌 Python
-* 
+* **Hubo**
 ## 📌 Data Structure
 * **선형 자료구조 (Linear)**
   + **List**
