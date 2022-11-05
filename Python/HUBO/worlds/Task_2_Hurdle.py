@@ -19,7 +19,6 @@ def one_hurdle():
     hubo.move()
     
 hubo.move()
-for i in range(4):
+for i in range(6):
     one_hurdle()
-    
     
