@@ -9,26 +9,31 @@ def turn_right():
         hubo.turn_left()
 
 #def find_beeper():
-#
 
 
 def move_and_pick():
-    cnt = 0
+    global cnt
     hubo.move()
     if hubo.on_beeper():
         hubo.pick_beeper()
         cnt += 1
 
 cnt = 0
+swi = 0
 while cnt < 36:
     if hubo.front_is_clear():
         move_and_pick()
     else:
-        hubo.turn_left()
-
-
-
-
+        if swi == 0:
+            hubo.turn_left()
+            move_and_pick()
+            hubo.turn_left()
+            swi = 1
+        else:
+            turn_right()
+            move_and_pick()
+            turn_right()
+            swi = 0
 
 #hubo.front_is_clear()
 #hubo.pick_beeper()
