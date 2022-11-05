@@ -19,6 +19,7 @@
     + [연결 리스트 (Linked List)]()
     + [원형 연결 리스트 (Circular Linked List)]()
     + [양방향 연결 리스트 (Circular Doubly Linked List)]()
+    + 이진트리
   + **Stack**
     + _
   + **Queue**
