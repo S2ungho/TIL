@@ -23,6 +23,7 @@ while cnt < 36:
         move_and_pick()
     else:
         hubo.turn_left()
+        
 
 
 
