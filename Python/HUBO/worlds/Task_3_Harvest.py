@@ -1,6 +1,6 @@
 from cs1robots import*
 
-load_world("Python/HUBO/worlds/harvest2.wld")
+load_world("Python/HUBO/worlds/harvest1.wld")
 hubo = Robot() 
 hubo.set_trace('blue')
 
@@ -17,8 +17,7 @@ def move_and_pick():
     if hubo.on_beeper():
         hubo.pick_beeper()
 
-for i in range(10):
-    move_and_pick()
+
 
 #hubo.front_is_clear()
 #hubo.pick_beeper()
