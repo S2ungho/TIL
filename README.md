@@ -19,13 +19,14 @@
     + [연결 리스트 (Linked List)]()
     + [원형 연결 리스트 (Circular Linked List)]()
     + [양방향 연결 리스트 (Circular Doubly Linked List)]()
-    + 이진트리
   + **Stack**
     + _
   + **Queue**
     + [Queue_Heap](./DataStructure/queue_heap.md)
 * **비선형 자료구조 (NonLinear)**
-  + **Graph**
+  + **트리(Tree)**
+    + [이진트리(Binary Tree)](./DataStructure/Binary_Tree.md)
+  + **그래프(Graph)**
     + _
 ## 📌 Spring
 * 
