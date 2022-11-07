@@ -41,3 +41,8 @@ def insertionSort(A):
 			loc -= 1
 		A[loc+1] = newItem
 ```
+
+# 📍 선택, 버블, 삽입 정렬의 수행 시간 비교
+```python
+
+```
