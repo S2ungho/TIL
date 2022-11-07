@@ -83,3 +83,7 @@ for name in nameAry[1:]:
             current = current.right
         #memory.append(node)
 ```
+
+## 이진 탐색 트리에서 데이터 검색
+
+## 이진 탐색 트리에서 데이터 삭제
