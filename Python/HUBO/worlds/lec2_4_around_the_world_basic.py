@@ -1,6 +1,6 @@
 import time
 from cs1robots import*
-load_world("../worlds/8queens.wld")
+load_world("Python/HUBO/worlds/8queens.wld")
 #load_world("../worlds/amazing2.wld")
 
 hubo = Robot(beepers = 1)

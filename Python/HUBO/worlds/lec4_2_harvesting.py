@@ -1,6 +1,6 @@
 import time
 from cs1robots import *
-load_world("./worlds/harvest2.wld")
+load_world("Python/HUBO/worlds/harvest2.wld")
 hubo = Robot(orientation = 'N', avenue = 6, street = 2)
 
 def turn_right(robot):
@@ -27,6 +27,8 @@ def harvest_all(robot):
   diamond(robot, n)
   robot.move()
   robot.move()
+
+harvest_all(hubo)
   
 # harvest_all(hubo)
  

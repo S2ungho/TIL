@@ -19,25 +19,20 @@ def move_and_pick():
         cnt += 1
 
 cnt = 0
-swi = 1
-hubo.turn_left()
 while cnt < 36:
-    if hubo.front_is_clear():
-        move_and_pick()
-    else:
-        if swi == 0:
-            hubo.turn_left()
-            move_and_pick()
-            hubo.turn_left()
-            swi = 1
-        else:
-            turn_right()
-            move_and_pick()
-            turn_right()
-            swi = 0
 
+
+    if hubo.front_is_clear() and hubo.left_is_clear():
+        hubo.turn_left()
+    elif hubo.front_is_clear() and hubo.right_is_clear():
+        turn_right()
+    else:
+        hubo.turn_left()
+        hubo.turn_left()
+
+
+        
 #hubo.front_is_clear()
 #hubo.pick_beeper()
-
 #hubo.on_beeper()
 
