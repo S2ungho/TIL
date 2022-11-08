@@ -1,6 +1,6 @@
 import time
 from cs1robots import*
-load_world("./worlds/amazing1.wld")
+load_world("Python/HUBO/worlds/amazing1.wld")
 
 hubo = Robot(beepers = 4)
 
@@ -19,5 +19,5 @@ def move_or_turn():
 
 for i in range(20):
   move_or_turn()
-  time.sleep(0.5)
+  time.sleep(0.1)
  

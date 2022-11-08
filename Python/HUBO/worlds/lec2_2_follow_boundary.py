@@ -12,4 +12,4 @@ def move_or_turn():
 
 for i in range(20):
   move_or_turn()
-  time.sleep(0.5)
+  time.sleep(0.1)

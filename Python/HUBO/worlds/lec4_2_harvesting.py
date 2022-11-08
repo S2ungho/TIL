@@ -2,6 +2,7 @@ import time
 from cs1robots import *
 load_world("Python/HUBO/worlds/harvest2.wld")
 hubo = Robot(orientation = 'N', avenue = 6, street = 2)
+hubo.set_trace('blue')
 
 def turn_right(robot):
  for i in range(3):

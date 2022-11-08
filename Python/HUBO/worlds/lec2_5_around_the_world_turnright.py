@@ -14,6 +14,7 @@ hubo.move()
 while not hubo.on_beeper():
   if hubo.right_is_clear():
     turn_right()
+    hubo.move()
     
   elif hubo.front_is_clear():
     hubo.move()
