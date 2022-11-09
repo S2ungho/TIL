@@ -1,4 +1,5 @@
 import time
+from tkinter import N
 from cs1robots import *
 create_world()
 hubo = Robot() 
@@ -9,24 +10,23 @@ def turn_right():
     for i in range(3):
         hubo.turn_left()
 
+def Height():
+    global m, swi, n
+    for i in range(m):
+        hubo.move()
+        if not hubo.front_is_clear():
+            if n % 2 == 0:
+                turn_right()
+                hubo.move()
+                turn_right()
+            else:
+                hubo.turn_left()
+                hubo.move()
+                hubo.turn_left()
+
+#def Width():
+
+
+m = 10
 n = 10
-m = 7
-x = 0
-y = 0
-swi = 0
-hubo.turn_left()
-while x < n:
-    while y < m:
-        hubo.move()
-        y+=1
-    if swi == 0:
-        turn_right()
-        hubo.move()
-        turn_right()
-        swi = 1
-    else: 
-        hubo.turn_left()
-        hubo.move()
-        hubo.turn_left()
-        swi = 0
-    x+=1
+Height()
