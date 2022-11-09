@@ -10,6 +10,13 @@ def turn_right():
     for i in range(3):
         hubo.turn_left()
 
+def find_height():
+    global cnt
+    while hubo.front_is_clear():
+        hubo.move()
+        cnt += 1
+
+
 def Height():
     global m, swi, n
     for i in range(m):
@@ -28,6 +35,7 @@ def Height():
 
 #def Width():
 
+cnt = 0
 
 m = 9
 n = 10
