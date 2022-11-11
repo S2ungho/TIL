@@ -17,31 +17,39 @@ def move_and_pick():
         hubo.pick_beeper()
         cnt += 1
 #def find_beeper():
-def one():
-    move_and_pick()
-    turn_right()
-    move_and_pick()
-    hubo.turn_left()
-
-def two():
-    for i in range(a):
-        one()
+#def one():
     
 
-cnt = 0 
-cnt_s = 0
-a = 5
+def up():
+    global a
+    for i in range(a):
+        move_and_pick()
+        turn_right()
+        move_and_pick()
+        hubo.turn_left()
 
-while cnt < 36:
+def around():
+    global a
+    for i in range(3):
+        up()
+        hubo.turn_left()
+    up(4)
+    #a -= 2
+
+def first():
     for i in range(5):
         move_and_pick()
     hubo.turn_left()
     move_and_pick()
-    while cnt < 36:
-        for i in range(3):
-            two()
-            hubo.turn_left()
-        a -= 1
+
+
+cnt = 0 
+cnt_s = 0
+a = 5
+while cnt < 36:
+    first()
+    around()
+
 print(cnt_s)
 
 

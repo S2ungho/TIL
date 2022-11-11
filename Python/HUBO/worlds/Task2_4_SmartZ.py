@@ -12,7 +12,7 @@ def turn_right():
 
 def Height():
     global m, swi, n
-    for i in range(m):
+    for i in range(m+2):
         hubo.move()
         if not hubo.front_is_clear():
             if n % 2 == 0:
@@ -26,10 +26,7 @@ def Height():
                 hubo.turn_left()
                 n -= 1
 
-#def Width():
-
-
-m = 9
+m = 7
 n = 10
 hubo.turn_left()
 for i in range(n):
