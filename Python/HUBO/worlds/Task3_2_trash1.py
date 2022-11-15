@@ -11,15 +11,12 @@ def turn_right():
         hubo.turn_left()
 
 def move_and_pick():
-    global cnt
     hubo.move()
     while hubo.on_beeper():
     #if hubo.on_beeper():
         hubo.pick_beeper()
-        cnt += 1
 
 def last_move():
-    global cnt
     while hubo.front_is_clear():
         move_and_pick()
 
@@ -39,7 +36,5 @@ def wall():
             hubo.move()
 
 
-cnt = 0
 last_move()
-print(cnt)
 wall()
