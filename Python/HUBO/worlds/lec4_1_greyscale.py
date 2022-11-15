@@ -4,7 +4,7 @@ def luma(p):
  r, g, b = p
  return int(0.213 * r + 0.715 * g + 0.072 * b)
 
-img = load_picture("./cs101_students.jpg")
+img = load_picture("Python/HUBO/worlds/cs101_students.jpg")
 img.show()
 w, h = img.size()
 for y in range(h):
