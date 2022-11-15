@@ -13,7 +13,7 @@ def blackwhite(img, threshold):
    else:
     img.set(x, y, black)
  
-pict = load_picture("cs101_students.jpg")
+pict = load_picture("Python/HUBO/worlds/sonny.jpg")
 pict.show()
 blackwhite(pict, 100)
 pict.show()
