@@ -45,3 +45,126 @@ t.turnOff();
 ```
 ***
 🔺 2022. 11. 08.
+
+# ✏️ 인터페이스를 이용한 다중 상속
+* 다중상속(Multiple inheritance) : 하나의 클래스가 여러 개의 부모 클래스를 가지는 것
+1. 여러개의 인터페이스를 동시에 구현
+```java
+interface Drivable{ void drive(); }
+interface Flyable{ void fly(); }
+
+public class FlyingCar1 implements Drivable, Flyable{
+    @Override
+    public void drive() {
+        System.out.println("driving");
+    }
+    @Override
+    public void fly() {
+        System.out.println("flying");
+    }
+    public static void main(String args[]){
+        FlyingCar1 obj = new FlyingCar1();
+        obj.drive();
+        obj.fly();
+    }
+}
+
+```
+
+2. 하나의 클래스를 상속받고 또 하나의 인터페이스를 구현
+```java
+interface Flyable{ void fly(); }
+class Car{
+    int speed;
+    void setSpeed(int speed){ this.speed = speed; }
+}
+public class FlyingCar1 extends Car implements Flyable{
+    @Override
+    public void fly() {
+        System.out.println("flying");
+    }
+    public static void main(String args[]){
+        FlyingCar1 obj = new FlyingCar1();
+        obj.setSpeed(100);
+        obj.fly();
+    }
+}
+```
+## 상수 정의
+* 인터페이스에 상수는 정의할 수 있다. 인터페이스에서 정의된 변수는 자동적으로 public static final 이 되어 상수가 된다.
+
+* 인터페이스 및 다중상속 예제
+```java
+/** * A short description of the program.
+ * author Seungho HAM
+ * SID 60191982
+ * assignment java - lab8
+ * @date 2022.11.15
+ * + construct
+ */
+interface Area{
+    void getArea();
+}
+interface Movable{
+    void move(int dx, int dy);
+}
+class Shape implements Movable, Area{
+    int x, y;
+    public void move(int dx, int dy){
+        x = dx;
+        y = dy;
+    }
+    public void getArea(){
+        System.out.println(x + " " + y);
+    }
+}
+class Rectangle extends Shape{
+    int weight, height;
+    public Rectangle(){}
+    public Rectangle(int w, int h){
+        weight = w;
+        height = h;
+    }
+    public void getArea(){
+        System.out.println("Rectangle\t: " + (weight + x) * (height + y) );
+    }
+}
+class Triangle extends Shape{
+    int base, height;
+    public Triangle(){}
+    public Triangle(int b, int h){
+        base = b;
+        height = h;
+    }
+    public void getArea(){
+        System.out.println("Triangle\t: " + (base + x) * (height + y) / 2 );
+    }
+}
+class Circle extends Shape{
+    int radius;
+    public Circle(){}
+    public Circle(int r){
+        radius = r;
+    }
+    public void getArea(){
+        System.out.println("Circle\t\t: " + 3.14 * (radius + x + y) * (radius + x + y));
+    }
+}
+
+public class ShapeTest {
+    public static void main(String args[]) {
+        Shape[] arrayOfShapes;
+        arrayOfShapes = new Shape[3];
+        arrayOfShapes[0] = new Rectangle(2,2);
+        arrayOfShapes[1] = new Triangle(3,3);
+        arrayOfShapes[2] = new Circle(5);
+        for(int i = 0;i < 3;i++){
+            arrayOfShapes[i].move(10,10);
+            arrayOfShapes[i].getArea();
+        }
+    }
+}
+```
+
+***
+🔺 2022. 11. 16.
