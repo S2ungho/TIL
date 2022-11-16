@@ -13,7 +13,8 @@
   + [다형성](./Java/다형성_Polymorphism.md)
 * [**추상 클래스(Abstract class)**](./Java/%EC%B6%94%EC%83%81%ED%81%B4%EB%9E%98%EC%8A%A4_AbstractClass.md)
 * [**인터페이스(Interface)**](./Java/인터페이스_Interface.md)
-* [*디폴트 메소드와 정적 메소드*](./Java/)
+* [**디폴트 메소드와 정적 메소드**](./Java/Default_static_method.md)
+* [**중첩 클래스**](./Java/Outer_Class.md)
 * [**패키지(package**)](./Java/%ED%8C%A8%ED%82%A4%EC%A7%80_Package.md)
 ## 📌 Python
 * **Hubo**
