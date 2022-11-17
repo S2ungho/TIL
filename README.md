@@ -16,6 +16,7 @@
 * [**디폴트 메소드와 정적 메소드**](./Java/Default_static_method.md)
 * [**중첩 클래스**](./Java/Outer_Class.md)
 * [**패키지(package**)](./Java/%ED%8C%A8%ED%82%A4%EC%A7%80_Package.md)
+* [**제네릭과 컬렉션**](./Java)
 ## 📌 Python
 * **Hubo**
   + [**.**]()
