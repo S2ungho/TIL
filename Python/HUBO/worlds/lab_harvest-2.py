@@ -1,6 +1,6 @@
 from cs1robots import *
 
-load_world("./worlds/harvest2.wld")
+load_world("Python/HUBO/worlds/harvest2.wld")
 count=0
 
 def turn_right(robot):
