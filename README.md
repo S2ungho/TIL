@@ -19,7 +19,7 @@
 * [**제네릭과 컬렉션**](./Java)
 ## 📌 Python
 * **Hubo**
-  + [**.**]()
+  + [**Hubo**](./Python/HUBO/worlds)
 ## 📌 Data Structure
 * **선형 자료구조 (Linear)**
   + **List**
