@@ -1,8 +1,8 @@
 # ⭐️ Today I Learned(TIL)
     🌟 오늘 배운 내용은 오늘 기록하기!
 ## ⭐️ 몰랐던, 기억해야할 내용
-* [상속의 업캐스팅](./Remind/Remind_Upcasting.md)
-* [인터페이스와 추상클래스](./Remind/Remind_Inter_abst.md)
+* [[JAVA]상속의 업캐스팅](./Remind/Remind_Upcasting.md)
+* [[JAVA]인터페이스와 추상클래스](./Remind/Remind_Inter_abst.md)
 ## 📌 Java
 * **클래스(Class)**
 * **OPP(Object- Oriented Programming)**
