@@ -3,6 +3,7 @@
 ## ⭐️ 몰랐던, 기억해야할 내용
 * [[JAVA]상속의 업캐스팅](./Remind/Remind_Upcasting.md)
 * [[JAVA]인터페이스와 추상클래스](./Remind/Remind_Inter_abst.md)
+* [[JAVA]래그드 배열, ArrayList](./Remind/Remind_Rag_AL.md)
 ## 📌 Java
 * **클래스(Class)**
 * **OPP(Object- Oriented Programming)**
