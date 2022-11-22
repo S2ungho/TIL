@@ -9,6 +9,7 @@ def withdrawal(money):
     global balance
     if balance > money:
         balance = balance - money
+        print(balance)
     else:
         print("error : under "+ str(balance))
 
