@@ -4,8 +4,8 @@ import copy
 
 paper = Canvas()
 paper.setBackgroundColor('skyBlue')
-paper.setWidth(1500)
-paper.setHeight(1000)
+paper.setWidth(300)
+paper.setHeight(200)
 paper.setTitle('My World')
 
 roof = Polygon(Point(105, 105), Point(175, 105), Point(170, 85), Point(110, 85))
