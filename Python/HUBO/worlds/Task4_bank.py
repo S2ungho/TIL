@@ -14,7 +14,7 @@ def withdrawal(money):
         print("error : under "+ str(balance))
 
 balance = 0
-s = str(input("Deposit(d) or withdrawal(w) or balance check(c) : "))
+s = str(input("Deposit(d) or withdrawal(w) or balance check(c) or end(e): "))
 while s != "e":
     if s == "d":
         money = int(input("deposit : "))
