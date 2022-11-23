@@ -8,15 +8,15 @@
 * **클래스(Class)**
 * **OPP(Object- Oriented Programming)**
 * **상속(Inheritance)**
-  + [상속과 접근 지정자](./Java/%EC%83%81%EC%86%8D_%EC%A0%91%EA%B7%BC%EC%A7%80%EC%A0%95%EC%9E%90.md)
-  + [상속과 생성자](./Java/%EC%83%81%EC%86%8D_%EC%83%9D%EC%84%B1%EC%9E%90.md)
-  + [메소드 오버라이딩(method overriding)](./Java/method_overriding.md)
-  + [다형성](./Java/다형성_Polymorphism.md)
-* [**추상 클래스(Abstract class)**](./Java/%EC%B6%94%EC%83%81%ED%81%B4%EB%9E%98%EC%8A%A4_AbstractClass.md)
-* [**인터페이스(Interface)**](./Java/인터페이스_Interface.md)
-* [**디폴트 메소드와 정적 메소드**](./Java/Default_static_method.md)
-* [**중첩 클래스**](./Java/Outer_Class.md)
-* [**패키지(package)**](./Java/%ED%8C%A8%ED%82%A4%EC%A7%80_Package.md)
+  + [상속과 접근 지정자](./Java/06_%EC%83%81%EC%86%8D_%EC%A0%91%EA%B7%BC%EC%A7%80%EC%A0%95%EC%9E%90.md)
+  + [상속과 생성자](./Java/06_%EC%83%81%EC%86%8D_%EC%83%9D%EC%84%B1%EC%9E%90.md)
+  + [메소드 오버라이딩(method overriding)](./Java/06_method_overriding.md)
+  + [다형성](./Java/06_Polymorphism.md)
+* [**추상 클래스(Abstract class)**](./Java/07_AbstractClass.md)
+* [**인터페이스(Interface)**](./Java/07_Interface.md)
+* [**디폴트 메소드와 정적 메소드**](./Java/07_Default_static_method.md)
+* [**중첩 클래스**](./Java/07_Outer_Class.md)
+* [**패키지(package)**](./Java/08_Package.md)
 * [**Object 클래스**](./Java/08_Api_Package.md)
 * [**제네릭과 컬렉션**](./Java/)
 ## 📌 Python
