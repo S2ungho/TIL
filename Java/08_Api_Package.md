@@ -248,3 +248,28 @@ public class ArrayTest {
 //5
 //[8 8 8 8 8 8 ]
 ```
+
+## 📍 Calendar 클래스
+    Calendar 클래스는 추상 클래스로서 날짜와 시간에 대한 정보를 가지고 있고 특정 시ㅈ각을 연도, 월, 일 등으로 변환하는 메소드도 가지고 있다.
+    Calendar 클래스는 1970년 1월 1일 00:00:00.000 GMT부터 흘러온 시간을 저장하고 있다
+```java
+import java.util.*;
+public class CalendarTest{
+  public static void main(String[] args){
+    Calendar d = Calendar.getInstance(); // 객체 생성
+    System.out.println(d);
+    System.out.println(d.get(Calendar.YEAR)+"년");
+    System.out.println(d.get(Calendar.MONTH)+"월");
+    System.out.println(d.get(Calendar.DATE)+"일");
+
+    d.set(Calendar.HOUR, 12);
+    d.set(Calendar.MINUTE, 34);
+    d.set(Calendar.SECOND, 0);
+    System.out.println(d);
+
+    }
+}
+```
+
+***
+🔺 2022. 11. 23.
