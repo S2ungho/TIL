@@ -18,7 +18,9 @@
 * [**중첩 클래스**](./Java/07_Outer_Class.md)
 * [**패키지(package)**](./Java/08_Package.md)
 * [**Object 클래스**](./Java/08_Api_Package.md)
-* [**제네릭과 컬렉션**](./Java/)
+* **제네릭과 컬렉션**
+  + [제네릭(Generic)](./Java/13_Generic.md)
+  + [컬렉션(Collection)](./Java/13_Collection.md)
 ## 📌 Python
 * **Hubo**
   + [**Hubo**](./Python/HUBO/worlds)
