@@ -1,12 +1,12 @@
 # ⭐️ Today I Learned(TIL)
     🌟 오늘 배운 내용은 오늘 기록하기
-## ⭐️ 몰랐던, 기억해야할 내용
+## ⭐️ 몰랐던, 기억해야할 내용들
 * [[JAVA]상속의 업캐스팅](./Remind/Remind_Upcasting.md)
 * [[JAVA]인터페이스와 추상클래스](./Remind/Remind_Inter_abst.md)
 * [[JAVA]래그드 배열, ArrayList](./Remind/Remind_Rag_AL.md)
 ## 📌 Java
 * **클래스(Class)**
-* **OPP(Object- Oriented Programming)**
+* **OPP(Object-Oriented Programming)**
 * **상속(Inheritance)**
   + [상속과 접근 지정자](./Java/06_%EC%83%81%EC%86%8D_%EC%A0%91%EA%B7%BC%EC%A7%80%EC%A0%95%EC%9E%90.md)
   + [상속과 생성자](./Java/06_%EC%83%81%EC%86%8D_%EC%83%9D%EC%84%B1%EC%9E%90.md)
