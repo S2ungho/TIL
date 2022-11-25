@@ -23,7 +23,7 @@
   + [컬렉션(Collection)](./Java/13_Collection.md)
 ## 📌 Python
 * **Hubo**
-  + [**Hubo**](./Python/HUBO/worlds)
+  + [**Hubo Test**](./Python/HUBO/worlds)
 ## 📌 Data Structure
 * **선형 자료구조 (Linear)**
   + **List**
