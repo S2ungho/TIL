@@ -23,7 +23,9 @@
   + [컬렉션(Collection)](./Java/13_Collection.md)
 ## 📌 Python
 * **Hubo**
-  + [**Hubo Test**](./Python/HUBO/worlds)
+  + [**Hubo Test**](./Python/Binary_Tree.md)
+* **자료구조**
+  + [이진트리(Binary Tree)]()
 ## 📌 Data Structure
 * **선형 자료구조 (Linear)**
   + **List**
@@ -36,8 +38,6 @@
   + **Queue**
     + [Queue_Heap](./DataStructure/queue_heap.md)
 * **비선형 자료구조 (NonLinear)**
-  + **트리(Tree)**
-    + [이진트리(Binary Tree)](./DataStructure/Binary_Tree.md)
   + **그래프(Graph)**
     + _
 * **정렬(Sort)**
