@@ -22,3 +22,17 @@ canvas.setBackgroundColor("light blue")
 canvas.setTitle("CS101 Drawing exercise")
 canvas.add(car)
 car.moveTo(20, 250)
+
+for i in range(50):
+ car.move(2, 0)
+for i in range(22):
+ car.rotate(-1)
+for i in range(50):
+ car.move(2,-1)
+for i in range(22): 
+ car.rotate(1)
+for i in range(50):
+ car.move(2,0)
+for i in range(10):
+ car.scale(1.05)
+car.flip(90)
