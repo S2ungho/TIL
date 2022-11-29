@@ -40,6 +40,11 @@ class Deck(object):
   def __init__(self):
     """Create a deck of 52 cards and shuffle them."""
     ### 5. 52개의 카드를 만들고 random module을 사용, 섞으시오
+    self.cards = []
+    for suit in SUITS:
+      for face in FACES:
+        self.cards.append(Card(face,suit))
+    random.shuffle(self.cards)
 
 
   def draw(self):
