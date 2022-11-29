@@ -2,24 +2,36 @@ import random
 
 
 ### 1. FACES and SUITS list 작성
-
-
+FACES = list(range(2,11)) + ['Jack','Queen','King','Ace']
+SUITS = ['Clubs', 'Diamond', 'Hearts', 'Spades']
 
 class Card:
   """A card has a face and suit."""
 
   def __init__(self, face, suit):
     ### 2.  assert를 사용해서 face와 suit가 FACES와 SUITS에서만 뽑히도록 하고, face suit attribute 작성
+    assert face in FACES and suit in SUITS
+    self.face = face
+    self.suit = suit
 
   def __str__(self):
     article = "a "
     if self.face in [8, "Ace"]: 
       article = "an "
     ### 3.  an 8 of diamond, a Queen of spade 같은 꼴의 str 리턴
+    return (article + str(self.face) + " of " + self.suit)
 
   def value(self):
     """Returns the face value of the card."""
     ### 4. J Q K는 10, A는 11 리턴
+    if type(self.face) == int:
+      return self.face
+    elif self.face == "Ace":
+      return 11
+    else:
+      return 10
+
+
 
 
 
