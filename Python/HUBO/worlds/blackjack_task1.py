@@ -57,6 +57,9 @@ class Deck(object):
 def hand_value(hand):
   """Computes the value of a hand of cards."""
   ### 6. 각 hand가 input으로 들어왔을 때 전체 value의 합을 계산하시오
+  value += hand
+
+  
 
 
 
@@ -73,10 +76,15 @@ def ask_yesno(prompt):
   """
   
   ### 7. prompt를 보여주고, user가 y나 n를 입력하게 함, y이면 True를 반환, n이면 False를 반환 둘 다 아니면 "I beg your pardon"
-
-
-
-
+  print(prompt)
+  x = input("y/n")
+  if x == "y":
+    return True
+  elif x == "n":
+    return False
+  else:
+    print("I beg your pardon")
+    
 
       
 def blackjack():
