@@ -153,7 +153,7 @@ class Hand(object):                    ########## 테이블에서 보여지는 �
 
   def add(self, card, hidden = False):
     """Add a new card to the hand."""
-    # 11.
+    # 11. ((((녹))))
     # hand에 card를 append 하시오  
     # card에 해당하는 graphic을 만드시오
     # graphic을 self.x + CARD_SIZE[0] * 2 * len(self.graphics), self.y 으로 이동시키시오  
@@ -172,7 +172,7 @@ class Hand(object):                    ########## 테이블에서 보여지는 �
 
   def show(self):
     """Make all cards visible."""
-    ## 12. 모든 그래픽을 보이게 하시오
+    ## 12. 모든 그래픽을 보이게 하시오 //딜러카드 히든, 힌트 : 뎁스 사용
 
   def value(self):
     """Return value of the hand."""
@@ -185,7 +185,7 @@ class Table(object):
   def __init__(self):
     self.canvas = Canvas(600, 400, 'dark green', 'Black Jack 101')
     ## 14.
-    ## self.player 이름의 Hand를 CARD_SIZE[0], CARD_SIZE[1]에 만드시오
+    ## self.player 이름의 Hand를 CARD_SIZE[0], CARD_SIZE[1]에 만드시오 // 핸드 오브젝트 만들라?
     ## self.dealer 이름의 Hand를 CARD_SIZE[0], 3 * CARD_SIZE[1]에 만드시오
 
 
@@ -222,7 +222,7 @@ class Table(object):
 
   def clear(self):
     """Clear everything on the table."""
-    ## 15. player, dealer hand clear하고, message, question, score를 setMessage("") method 적용
+    ## 15. player, dealer hand clear하고(핸드오브젝트 클리어 적용하라는것), message, question, score를 setMessage("") method 적용
 
 
 
@@ -235,7 +235,7 @@ class Table(object):
 
 
   def ask(self, prompt):
-    ## propmpt를 띄우고, user의 반응에 따라 action
+    ## propmpt를 띄우고, user의 반응에 따라 action // 이해하라고 적어놓은 것
     self.question.setMessage(prompt)
     while True:
       e = self.canvas.wait()
@@ -275,7 +275,7 @@ def blackjack(table):
   
 
 
-  # 19.
+  # 19. // 객체들이 달라졌으니 활용이 조금 달라질 것이다.
   # player's turn to draw cards
   # 플레이어의 total value가 21보다 작으면 "Would you like another card?" 을 물어보고, n이면 딜러 턴으로 넘어가고 
   # y이면 한장 더 주기
