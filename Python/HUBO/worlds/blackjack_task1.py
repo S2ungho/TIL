@@ -143,10 +143,10 @@ def blackjack():
   # 플레이어가 카드를 더이상 받지 않으면, 딜러의 차례로 넘어감   
   if hand_value(player_cards) < 21:
     q = input("Would you like another card? (y/n) ? ")
-#    if q == n:
-#      #딜러턴
+#    if q == y:
+      #한장 더 주기
 #    else:
-#      #한장 더 주기
+#     #딜러턴
     
 
 
