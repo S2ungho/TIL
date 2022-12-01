@@ -141,7 +141,13 @@ def blackjack():
   # "your total is 13"
   # 플레이어의 카드값이 21보다 크면 "You went over 21! You lost!"를 프린트하고 경기 끝  
   # 플레이어가 카드를 더이상 받지 않으면, 딜러의 차례로 넘어감   
-
+  if hand_value(player_cards) < 21:
+    q = input("Would you like another card? (y/n) ? ")
+    if q == n:
+      #딜러턴
+    else:
+      #한장 더 주기
+    
 
 
 

@@ -3,7 +3,7 @@ threshold = 100
 white = (255, 255, 255)
 black = (0, 0, 0)
 
-img = load_picture("./cs101_students.jpg")
+img = load_picture("Python/HUBO/worlds/cs101_students.jpg")
 img.show()
 w, h = img.size()
 for y in range(h):
