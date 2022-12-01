@@ -33,8 +33,6 @@ class Card:
 
 
 
-
-
 class Deck(object):
   """A deck of cards."""
   def __init__(self):
@@ -43,7 +41,7 @@ class Deck(object):
     self.cards = []
     for suit in SUITS:
       for face in FACES:
-        self.cards.append(Card(face,suit))
+        self.cards.append(Card(face, suit))
     random.shuffle(self.cards)
 
 
@@ -57,7 +55,10 @@ class Deck(object):
 def hand_value(hand):
   """Computes the value of a hand of cards."""
   ### 6. 각 hand가 input으로 들어왔을 때 전체 value의 합을 계산하시오
-  value += hand
+  value = 0
+  for i in range(0,len(hand)):
+    value += int(hand[i].value())
+  return value
 
   
 
@@ -96,6 +97,8 @@ def blackjack():
 
 
   deck = Deck()
+  #for i in range(0,len(deck.cards)): //덱 잘 만들어 졌는지 확인
+  #  print(deck.cards[i])
   dealer_cards = []
   player_cards = []
 
@@ -108,6 +111,17 @@ def blackjack():
   #  You are dealt a 2 of Spades.
   #  Dealer is dealt a King of Diamonds. 
   #  your total is 11
+  print()
+  player_cards.append(deck.cards[0])
+  print("You are dealt" + str(player_cards[0]))
+  dealer_cards.append(deck.cards[1])
+  print("Dealer is dealt" + str(dealer_cards[0]))
+  player_cards.append(deck.cards[2])
+  print("You are dealt" + str(player_cards[1]))
+  dealer_cards.append(deck.cards[3])
+  print("Dealer is dealy" + str(dealer_cards[1]))
+  print()
+  print("your total is " + str(hand_value(player_cards)))
 
 
 
@@ -170,8 +184,8 @@ def blackjack():
 def game_loop():
   print("Welcome to Blackjack 101!")   
   while True:
-    print
-    blackjack()    
+    print()
+    blackjack()
     if not ask_yesno("\nPlay another round? (y/n) "):
       break    
 
