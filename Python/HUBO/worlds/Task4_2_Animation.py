@@ -36,3 +36,4 @@ for i in range(50):
 for i in range(10):
  car.scale(1.05)
 car.flip(90)
+##ㅁㄴㅇ
