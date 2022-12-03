@@ -151,7 +151,7 @@ def blackjack():
       #21이랑 같으면 승리?
   print("You went over 21! You lost!")
   print()
-  #여기까지 했습니당
+  #여기까지 했습니당//
     
 
 
