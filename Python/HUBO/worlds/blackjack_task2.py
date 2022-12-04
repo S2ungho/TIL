@@ -166,6 +166,10 @@ class CardGraphics(object):
     self.l.add(self.bg)
     
     # 8. symbol for center, card suit에 맞는 symbol layer을 만들어서 self.l에 add하기
+    self.l.add(create_clubs(Card.value()))
+    self.l.add(create_diamonds(Card.value()))
+    self.l.add(create_hearts(Card.value()))
+    self.l.add(create_spades(Card.value()))
 
 
 
@@ -191,6 +195,13 @@ class CardGraphics(object):
     self.l.add(lt_num)
         
     # 9. right-bottom text 작성하시오
+    rb_num = Text()
+    rb_num.setMessage(num)
+    rb_num.setFontColor(color)
+    rb_num_dim = rb_num.getDimensions()
+    rb_num.moveTo(-CARD_SIZE[0]/2 + rb_num_dim[0]/2, 
+                   -CARD_SIZE[1]/2 + rb_num_dim[1]/2)
+    self.l.add(rb_num)
 
   def show(self):
     self.bg.setDepth(100)
@@ -234,6 +245,14 @@ class Hand(object):                    ########## 테이블에서 보여지는 �
     # graphic을 self.x + CARD_SIZE[0] * 2 * len(self.graphics), self.y 으로 이동시키시오  
     # canvas에 그래픽을 추가하시오
     # graphics list에 해당 그래픽을 append하시오
+    self.hand.append(card)
+
+    CardGraphics(card, hidden) # 그래픽 만들기
+    Point(self.x + CARD_SIZE[0] * 2 * len(self.graphics), self.y) # 그래픽 이동시키기
+    Canvas.add() # 캔버스에 그래픽 추가하기
+    self.graphics.append() # 그래픽 리스트에 해당 그래픽 어팬드하기
+
+
 
 
 
@@ -248,6 +267,7 @@ class Hand(object):                    ########## 테이블에서 보여지는 �
   def show(self):
     """Make all cards visible."""
     ## 12. 모든 그래픽을 보이게 하시오 //딜러카드 히든, 힌트 : 뎁스 사용
+    CardGraphics(self.show())
 
   def value(self):
     """Return value of the hand."""
@@ -342,6 +362,7 @@ def blackjack(table):
 
 
   deck = Deck()
+
   # 18.
   # player의 hand에 한장 추가, dealer에 한장 추가 (hidden)
   # player의 hand에 한장 추가, dealer에 한장 추가
@@ -378,7 +399,7 @@ def blackjack(table):
 def game_loop():
   table = Table()
   while True:
-    blackjack(table)    
+    blackjack(table)
     if not table.ask("Another round?"):
       break    
     table.clear()
