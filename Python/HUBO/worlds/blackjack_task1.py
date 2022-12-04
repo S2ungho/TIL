@@ -97,12 +97,10 @@ def blackjack():
 
 
   deck = Deck()
-  #for i in range(0,len(deck.cards)): //덱 잘 만들어 졌는지 확인
+  #for i in range(0,len(deck.cards)): #덱 잘 만들어 졌는지 확인
   #  print(deck.cards[i])
   dealer_cards = []
   player_cards = []
-
-
 
   ###### 8.  initial two cards (처음 두장 받기)  
   #  dealer_cards 및 player_cards에 appned를 하면서 받은 카드에 따라서 아래와 같이 프린트가 되야함 
@@ -112,19 +110,17 @@ def blackjack():
   #  Dealer is dealt a King of Diamonds. 
   #  your total is 11
   print()
-  player_cards.append(deck.cards[0])
-  print("You are dealt" + str(player_cards[0]))
-  dealer_cards.append(deck.cards[1])
-  #print("Dealer is dealt" + str(dealer_cards[0]))
+  player_cards.append(deck.draw())
+  print("You are dealt " + str(player_cards[0]))
+  dealer_cards.append(deck.draw())
+  print("[H] Dealer is dealt" + str(dealer_cards[0]))
   print("Dealer is dealt a hidden card")
-  player_cards.append(deck.cards[2])
-  print("You are dealt" + str(player_cards[1]))
-  dealer_cards.append(deck.cards[3])
-  print("Dealer is dealy" + str(dealer_cards[1]))
+  player_cards.append(deck.draw())
+  print("You are dealt " + str(player_cards[1]))
+  dealer_cards.append(deck.draw())
+  print("Dealer is dealt" + str(dealer_cards[1]))
   print()
   print("your total is " + str(hand_value(player_cards)))
-
-
 
 
   ### 9. player's turn to draw cards
@@ -135,23 +131,24 @@ def blackjack():
   # "your total is 13"
   # 플레이어의 카드값이 21보다 크면 "You went over 21! You lost!"를 프린트하고 경기 끝  
   # 플레이어가 카드를 더이상 받지 않으면, 딜러의 차례로 넘어감   
-  while hand_value(player_cards) < 21:
-    i = 4
-  # if hand_value(player_cards) < 21:
+  while hand_value(player_cards) < 22:
+    i = 2
     q = input("Would you like another card? (y/n) ? ")
     if q == "y":
-      player_cards.append(deck.cards[i])
-      print("You are dealt" + str(player_cards[2]))
+      player_cards.append(deck.draw())
+      print("You are dealt " + str(player_cards[i]))
       print("your total is " + str(hand_value(player_cards)))
       i += 1
     else:
-      dealer_cards.append(deck.cards[i])
-      print("Dealer is dealy" + str(dealer_cards[2]))
-      i += 1
-      #21이랑 같으면 승리?
-  print("You went over 21! You lost!")
-  print()
-  #여기까지 했습니당//
+      print()
+      print("Dealer's turn")
+      print()
+      break
+
+  if hand_value(player_cards) > 21:
+    print("You went over 21! You lost!")
+    print()
+    return
     
 
 
@@ -163,8 +160,11 @@ def blackjack():
   # "The dealer's total is 20"
   #  17보다 크면 아래로 넘어감
   print("The dealer's hidden card was " + str(dealer_cards[0]))
-
-
+  i = 2
+  while hand_value(dealer_cards) < 17:
+    dealer_cards.append(deck.draw())
+    print("Dealer is dealt " + str(dealer_cards[i]))
+    i += 1
 
 
   ### 11. player의 total 점수와, dealer의 total 점수를 프린트 해주고 
@@ -175,7 +175,23 @@ def blackjack():
   # "The dealer went over 21! You win!" 프린트하고 1 반환 혹은
   # "You lost" 프린트하고 -1 반환 혹은
   # "You have a tie" 를 프린트하고, 0 반환
-  
+  print()
+  print("==============================================")
+  print("your total is " + str(hand_value(player_cards)))
+  print("The dealer's total is " + str(hand_value(dealer_cards)))
+  if (hand_value(dealer_cards)) > 21:
+    print("The dealer went over 21!, You win!")
+    return 1
+  elif (21-(hand_value(player_cards))) < (21-(hand_value(dealer_cards))):
+    print("You win!")
+    return 1
+  elif (hand_value(player_cards)) == (hand_value(dealer_cards)):
+    print("You have a tie")
+    return 0
+  else:
+    print("You lost")
+    return -1
+
 
 
 
