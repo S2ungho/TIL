@@ -7,8 +7,9 @@ import time
 import sys
 from cs1graphics import *
 
-### 1. FACES and SUITS list 작성
-
+### 1. FACES and SUITS list 작성 (완료)
+FACES = list(range(2,11)) + ['Jack','Queen','King','Ace']
+SUITS = ['Clubs', 'Diamond', 'Hearts', 'Spades']
 
 CARD_SIZE = (40, 80)
 RADIUS = 3
@@ -20,7 +21,10 @@ class Card:
   """A card has a face and suit."""
 
   def __init__(self, face, suit):
-    ### 2.  assert를 사용해서 face와 suit가 FACES와 SUITS에서만 뽑히도록 하고, face suit attribute 작성
+    ### 2.  assert를 사용해서 face와 suit가 FACES와 SUITS에서만 뽑히도록 하고, face suit attribute 작성 (완료)
+    assert face in FACES and suit in SUITS
+    self.face = face
+    self.suit = suit
     self.graphics = None
   
   
@@ -29,15 +33,18 @@ class Card:
     article = "a "
     if self.face in [8, "Ace"]: 
       article = "an "
-    ### 3.  an 8 of diamond, a Queen of spade 같은 꼴의 str 리턴
+    ### 3.  an 8 of diamond, a Queen of spade 같은 꼴의 str 리턴 (완료)
+    return (article + str(self.face) + " of " + self.suit)
 
   def value(self):
     """Returns the face value of the card."""
-    ### 4. J Q K는 10, A는 11 리턴
-
-
-
-
+    ### 4. J Q K는 10, A는 11 리턴 (완료)
+    if type(self.face) == int:
+      return self.face
+    elif self.face == "Ace":
+      return 11
+    else:
+      return 10
 
 
 # --------------------------------------------------------------------
@@ -68,12 +75,75 @@ def create_clubs(symbol):
   
 def create_diamonds(symbol):            
   ## 5. create diamonds
+  circle1 = Circle(RADIUS, Point(0, -RADIUS))
+  circle1.setFillColor('black')
+  circle1.setBorderWidth(0)
+  symbol.add(circle1)
+            
+  circle2 = Circle(RADIUS, Point(-RADIUS, 0))
+  circle2.setFillColor('black')
+  circle2.setBorderWidth(0)
+  symbol.add(circle2)
+    
+  circle3 = Circle(RADIUS, Point(RADIUS, 0))
+  circle3.setFillColor('black')
+  circle3.setBorderWidth(0)
+  symbol.add(circle3)
+  
+  triangle = Polygon(Point(0, 0), 
+                     Point(-RADIUS*2, RADIUS*3), 
+                     Point(RADIUS*2, RADIUS*3))
+  triangle.setFillColor('black')
+  triangle.setBorderWidth(0)
+  symbol.add(triangle)
         
 def create_hearts(symbol):
   ## 6. create hearts
+  circle1 = Circle(RADIUS, Point(0, -RADIUS))
+  circle1.setFillColor('black')
+  circle1.setBorderWidth(0)
+  symbol.add(circle1)
+            
+  circle2 = Circle(RADIUS, Point(-RADIUS, 0))
+  circle2.setFillColor('black')
+  circle2.setBorderWidth(0)
+  symbol.add(circle2)
+    
+  circle3 = Circle(RADIUS, Point(RADIUS, 0))
+  circle3.setFillColor('black')
+  circle3.setBorderWidth(0)
+  symbol.add(circle3)
+  
+  triangle = Polygon(Point(0, 0), 
+                     Point(-RADIUS*2, RADIUS*3), 
+                     Point(RADIUS*2, RADIUS*3))
+  triangle.setFillColor('black')
+  triangle.setBorderWidth(0)
+  symbol.add(triangle)
 
 def create_spades(symbol):        
   ## 7. create spades
+  circle1 = Circle(RADIUS, Point(0, -RADIUS))
+  circle1.setFillColor('black')
+  circle1.setBorderWidth(0)
+  symbol.add(circle1)
+            
+  circle2 = Circle(RADIUS, Point(-RADIUS, 0))
+  circle2.setFillColor('black')
+  circle2.setBorderWidth(0)
+  symbol.add(circle2)
+    
+  circle3 = Circle(RADIUS, Point(RADIUS, 0))
+  circle3.setFillColor('black')
+  circle3.setBorderWidth(0)
+  symbol.add(circle3)
+  
+  triangle = Polygon(Point(0, 0), 
+                     Point(-RADIUS*2, RADIUS*3), 
+                     Point(RADIUS*2, RADIUS*3))
+  triangle.setFillColor('black')
+  triangle.setBorderWidth(0)
+  symbol.add(triangle)
 
 # --------------------------------------------------------------------
 
@@ -132,7 +202,12 @@ class Deck(object):
   """A deck of cards."""
   def __init__(self):
     """Create a deck of 52 cards and shuffle them."""
-    ### 10. 52개의 카드를 만들고 random module을 사용, 섞으시오
+    ### 10. 52개의 카드를 만들고 random module을 사용, 섞으시오 (완료)
+    self.cards = []
+    for suit in SUITS:
+      for face in FACES:
+        self.cards.append(Card(face, suit))
+    random.shuffle(self.cards)
 
 
   def draw(self):
@@ -226,10 +301,10 @@ class Table(object):
 
 
 
-  def set_score(self, which, text):
+  #def set_score(self, which, text):
     ## 16. score[which]에 text를 setmessage하시오
     
-  def show_message(self, text):
+  #def show_message(self, text):
     ## 17. message에 text를 setmessage하시오
     
 
@@ -267,7 +342,6 @@ def blackjack(table):
 
 
   deck = Deck()
-
   # 18.
   # player의 hand에 한장 추가, dealer에 한장 추가 (hidden)
   # player의 hand에 한장 추가, dealer에 한장 추가
