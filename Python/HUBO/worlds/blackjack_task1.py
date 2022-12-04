@@ -78,7 +78,7 @@ def ask_yesno(prompt):
   
   ### 7. prompt를 보여주고, user가 y나 n를 입력하게 함, y이면 True를 반환, n이면 False를 반환 둘 다 아니면 "I beg your pardon"
   print(prompt)
-  x = input("y/n")
+  x = input("y/n : ")
   if x == "y":
     return True
   elif x == "n":
@@ -133,13 +133,13 @@ def blackjack():
   # 플레이어가 카드를 더이상 받지 않으면, 딜러의 차례로 넘어감
   i = 2
   while hand_value(player_cards) < 22:
-    q = input("Would you like another card? (y/n) ? ")
-    if q == "y":
+    q = ask_yesno("Would you like another card? ")
+    if q == True: #"y":
       player_cards.append(deck.draw())
       print("You are dealt " + str(player_cards[i]))
       print("your total is " + str(hand_value(player_cards)))
       i += 1
-    else:
+    elif q == False: #else:
       print()
       print("Dealer's turn")
       print()
