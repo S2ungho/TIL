@@ -113,12 +113,12 @@ def blackjack():
   player_cards.append(deck.draw())
   print("You are dealt " + str(player_cards[0]))
   dealer_cards.append(deck.draw())
-  print("[H] Dealer is dealt" + str(dealer_cards[0]))
+  #print("[H] Dealer is dealt " + str(dealer_cards[0])) #딜러 히든카드 확인
   print("Dealer is dealt a hidden card")
   player_cards.append(deck.draw())
   print("You are dealt " + str(player_cards[1]))
   dealer_cards.append(deck.draw())
-  print("Dealer is dealt" + str(dealer_cards[1]))
+  print("Dealer is dealt " + str(dealer_cards[1]))
   print()
   print("your total is " + str(hand_value(player_cards)))
 
@@ -160,6 +160,7 @@ def blackjack():
   # "The dealer's total is 20"
   #  17보다 크면 아래로 넘어감
   print("The dealer's hidden card was " + str(dealer_cards[0]))
+  print("The dealer's total is " + str(hand_value(dealer_cards)))
   i = 2
   while hand_value(dealer_cards) < 17:
     dealer_cards.append(deck.draw())
