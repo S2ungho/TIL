@@ -205,7 +205,7 @@ class CardGraphics(object):
 
   def show(self):
     self.bg.setDepth(100)
-    self.bg.setFillColor('white')
+    #self.bg.setFillColor('white')
     
 # --------------------------------------------------------------------
 
@@ -239,18 +239,17 @@ class Hand(object):                    ########## 테이블에서 보여지는 �
 
   def add(self, card, hidden = False):
     """Add a new card to the hand."""
-    # 11. ((((녹))))
+    # 11.
     # hand에 card를 append 하시오  
     # card에 해당하는 graphic을 만드시오
     # graphic을 self.x + CARD_SIZE[0] * 2 * len(self.graphics), self.y 으로 이동시키시오  
     # canvas에 그래픽을 추가하시오
     # graphics list에 해당 그래픽을 append하시오
     self.hand.append(card)
-
-    CardGraphics(card, hidden) # 그래픽 만들기
-    Point(self.x + CARD_SIZE[0] * 2 * len(self.graphics), self.y) # 그래픽 이동시키기
-    Canvas.add() # 캔버스에 그래픽 추가하기
-    self.graphics.append() # 그래픽 리스트에 해당 그래픽 어팬드하기
+    grp = CardGraphics(card) # 그래픽 만들기
+    (self.x + CARD_SIZE[0] * 2 * len(self.graphics), self.y) # 그래픽 이동시키기
+    r = Canvas.add(grp)
+    self.graphics.append(r) # 그래픽 리스트에 해당 그래픽 어팬드하기
 
 
 
@@ -272,6 +271,10 @@ class Hand(object):                    ########## 테이블에서 보여지는 �
   def value(self):
     """Return value of the hand."""
     ## 13. total value를 반환하시오
+    value = 0
+    for i in range(0,len(hand)):
+      value += int(hand[i].value())
+    return value
 # --------------------------------------------------------------------
 
 class Table(object):
@@ -282,6 +285,8 @@ class Table(object):
     ## 14.
     ## self.player 이름의 Hand를 CARD_SIZE[0], CARD_SIZE[1]에 만드시오 // 핸드 오브젝트 만들라?
     ## self.dealer 이름의 Hand를 CARD_SIZE[0], 3 * CARD_SIZE[1]에 만드시오
+    self.player = Hand(CARD_SIZE[0], CARD_SIZE[1])
+    self.dealer = Hand(CARD_SIZE[0], 3 * CARD_SIZE[1])
 
 
 
