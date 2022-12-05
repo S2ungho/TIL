@@ -253,8 +253,6 @@ class Hand(object):                    ########## 테이블에서 보여지는 �
 
 
 
-
-
   def clear(self):
     """Make hand empty."""
     for item in self.graphics:
@@ -273,7 +271,7 @@ class Hand(object):                    ########## 테이블에서 보여지는 �
     ## 13. total value를 반환하시오
     value = 0
     for i in range(0,len(hand)):
-      value += int(hand[i].value())
+      value += int(self.hand[i].value())
     return value
 # --------------------------------------------------------------------
 
@@ -287,8 +285,6 @@ class Table(object):
     ## self.dealer 이름의 Hand를 CARD_SIZE[0], 3 * CARD_SIZE[1]에 만드시오
     self.player = Hand(CARD_SIZE[0], CARD_SIZE[1])
     self.dealer = Hand(CARD_SIZE[0], 3 * CARD_SIZE[1])
-
-
 
 
     self.score = [ Text(), Text() ]
@@ -323,6 +319,11 @@ class Table(object):
   def clear(self):
     """Clear everything on the table."""
     ## 15. player, dealer hand clear하고(핸드오브젝트 클리어 적용하라는것), message, question, score를 setMessage("") method 적용
+    self.player.hand.clear()
+    self.dealer.hand.clear()
+    self.message.setMessage()
+    self.question.setMessage()
+    #여기까지함
 
 
 
