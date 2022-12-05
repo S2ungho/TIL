@@ -270,7 +270,7 @@ class Hand(object):                    ########## 테이블에서 보여지는 �
     """Return value of the hand."""
     ## 13. total value를 반환하시오
     value = 0
-    for i in range(0,len(hand)):
+    for i in range(0,len(self.hand)):
       value += int(self.hand[i].value())
     return value
 # --------------------------------------------------------------------
@@ -321,18 +321,20 @@ class Table(object):
     ## 15. player, dealer hand clear하고(핸드오브젝트 클리어 적용하라는것), message, question, score를 setMessage("") method 적용
     self.player.hand.clear()
     self.dealer.hand.clear()
-    self.message.setMessage()
-    self.question.setMessage()
-    #여기까지함
+    self.message.setMessage("")
+    self.question.setMessage("")
+    for i in range(0,len(self.score)):
+      self.score[i].setMessage("")
 
 
 
-  #def set_score(self, which, text):
+  def set_score(self, which, text):
     ## 16. score[which]에 text를 setmessage하시오
+    self.score[which].setMessage(text)
     
-  #def show_message(self, text):
+  def show_message(self, text):
     ## 17. message에 text를 setmessage하시오
-    
+    self.message.setMessage(text)
 
 
   def ask(self, prompt):
@@ -373,7 +375,13 @@ def blackjack(table):
   # player의 hand에 한장 추가, dealer에 한장 추가 (hidden)
   # player의 hand에 한장 추가, dealer에 한장 추가
   # player의 점수를 set_score하시오 
-  
+  Table().player.add()
+  Table().dealer.add(hidden=True)
+  Table().player.add()
+  Table().dealer.add()
+  Table().set_score(text = Hand().value)
+
+
 
 
   # 19. // 객체들이 달라졌으니 활용이 조금 달라질 것이다.
@@ -384,9 +392,24 @@ def blackjack(table):
   # 플레이어의 카드값이 21보다 크면 "You went over 21! You lost!"를 show하고 경기 끝  
   # 플레이어가 카드를 더이상 받지 않으면, dealer의 hidden card를 보여주고 dealer의 score를 set 함
   # dealer의 value가 17보다 작으면 더 뽑고, score를 set 해줌
+  i = 2
+  while Hand.value(Table().player) < 22:
+    q = input("Would you like another card? ")
+    if q == "y":
+      Table().player.add(deck.draw())
+      print("You are dealt " + str(Table().player[i]))
+      print("your total is " + str(Hand.value(Table().player)))
+      i += 1
+    else:
+      print()
+      print("Dealer's turn")
+      print()
+      break
 
-
-
+  if Hand.value(Table().player) > 21:
+    print("You went over 21! You lost!")
+    print()
+    return
 
 
 
