@@ -67,59 +67,48 @@ def create_clubs(symbol):
   symbol.add(circle3)
   
   triangle = Polygon(Point(0, 0), 
-                     Point(-RADIUS*2, RADIUS*3), 
-                     Point(RADIUS*2, RADIUS*3))
+                     Point(-RADIUS*1, RADIUS*2), 
+                     Point(RADIUS*1, RADIUS*2))
   triangle.setFillColor('black')
   triangle.setBorderWidth(0)
   symbol.add(triangle)
   
 def create_diamonds(symbol):            
   ## 5. create diamonds
-  '''circle1 = Circle(RADIUS, Point(0, -RADIUS))
-  circle1.setFillColor('red')
-  circle1.setBorderWidth(0)
-  symbol.add(circle1)
-            
-  circle2 = Circle(RADIUS, Point(-RADIUS, 0))
-  circle2.setFillColor('red')
-  circle2.setBorderWidth(0)
-  symbol.add(circle2)
-    
-  circle3 = Circle(RADIUS, Point(RADIUS, 0))
-  circle3.setFillColor('red')
-  circle3.setBorderWidth(0)
-  symbol.add(circle3)'''
   
-  triangle = Polygon(Point(0, 0), 
-                     Point(-RADIUS*2, RADIUS*3), 
-                     Point(RADIUS*2, RADIUS*3))
-  triangle.setFillColor('red')
-  triangle.setBorderWidth(0)
-  symbol.add(triangle)
+  triangle1 = Polygon(Point(0, -2), 
+                     Point(-RADIUS*2, RADIUS*2), 
+                     Point(RADIUS*2, RADIUS*2))
+  triangle1.setFillColor('red')
+  triangle1.setBorderWidth(0)
+  symbol.add(triangle1)
+
+  triangle2 = Polygon(Point(0, 13), 
+                     Point(-RADIUS*2, RADIUS*2), 
+                     Point(RADIUS*2, RADIUS*2))
+  triangle2.setFillColor('red')
+  triangle2.setBorderWidth(0)
+  symbol.add(triangle2)
         
 def create_hearts(symbol):
   ## 6. create hearts
-  '''circle1 = Circle(RADIUS, Point(0, -RADIUS))
+            
+  circle1 = Circle(RADIUS+0.5, Point(-RADIUS, 5))
   circle1.setFillColor('red')
   circle1.setBorderWidth(0)
-  symbol.add(circle1)'''
-            
-  circle2 = Circle(RADIUS, Point(-RADIUS, 0))
+  symbol.add(circle1)
+    
+  circle2 = Circle(RADIUS+0.5, Point(RADIUS, 5))
   circle2.setFillColor('red')
   circle2.setBorderWidth(0)
   symbol.add(circle2)
-    
-  circle3 = Circle(RADIUS, Point(RADIUS, 0))
-  circle3.setFillColor('red')
-  circle3.setBorderWidth(0)
-  symbol.add(circle3)
-  
-  '''triangle = Polygon(Point(0, 0), 
-                     Point(-RADIUS*2, RADIUS*3), 
-                     Point(RADIUS*2, RADIUS*3))
-  triangle.setFillColor('red')
-  triangle.setBorderWidth(0)
-  symbol.add(triangle)'''
+
+  triangle1 = Polygon(Point(0, 13), 
+                     Point(-RADIUS*2, RADIUS*2), 
+                     Point(RADIUS*2, RADIUS*2))
+  triangle1.setFillColor('red')
+  triangle1.setBorderWidth(0)
+  symbol.add(triangle1)
 
 def create_spades(symbol):        
   ## 7. create spades
@@ -138,12 +127,12 @@ def create_spades(symbol):
   circle3.setBorderWidth(0)
   symbol.add(circle3)
   
-  '''triangle = Polygon(Point(0, 0), 
-                     Point(-RADIUS*2, RADIUS*3), 
-                     Point(RADIUS*2, RADIUS*3))
+  triangle = Polygon(Point(0, -10), 
+                     Point(-RADIUS*1, RADIUS*2), 
+                     Point(RADIUS*1, RADIUS*2))
   triangle.setFillColor('black')
   triangle.setBorderWidth(0)
-  symbol.add(triangle)'''
+  symbol.add(triangle)
 
 # --------------------------------------------------------------------
 
@@ -165,7 +154,7 @@ class CardGraphics(object):
       self.bg.setFillColor('white')
     self.l.add(self.bg)
     
-    # 8. symbol for center, card suit에 맞는 symbol layer을 만들어서 self.l에 add하기
+    # 8. symbol for center, card suit에 맞는 symbol layer을 만들어서 self.l에 add하기 (완료)
     symbol = Layer()
     if card.suit == 'Clubs':
       create_clubs(symbol)
@@ -199,7 +188,7 @@ class CardGraphics(object):
                    -CARD_SIZE[1]/2 + lt_num_dim[1]/2)
     self.l.add(lt_num)
         
-    # 9. right-bottom text 작성하시오
+    # 9. right-bottom text 작성하시오 (완료)
     rb_num = Text()
     rb_num.setMessage(num)
     rb_num.setFontColor(color)
@@ -210,7 +199,7 @@ class CardGraphics(object):
 
   def show(self):
     self.bg.setDepth(100)
-    #self.bg.setFillColor('white')
+    self.bg.setFillColor('white')
     
 # --------------------------------------------------------------------
 
@@ -244,7 +233,7 @@ class Hand(object):                    ########## 테이블에서 보여지는 �
 
   def add(self, card, hidden = False):
     """Add a new card to the hand."""
-    # 11.
+    # 11. (완료)
     # hand에 card를 append 하시오  
     # card에 해당하는 graphic을 만드시오
     # graphic을 self.x + CARD_SIZE[0] * 2 * len(self.graphics), self.y 으로 이동시키시오  
@@ -269,11 +258,12 @@ class Hand(object):                    ########## 테이블에서 보여지는 �
   def show(self):
     """Make all cards visible."""
     ## 12. 모든 그래픽을 보이게 하시오 //딜러카드 히든, 힌트 : 뎁스 사용
-    CardGraphics(self.show())
+
+    
 
   def value(self):
     """Return value of the hand."""
-    ## 13. total value를 반환하시오
+    ## 13. total value를 반환하시오 (완료)
     value = 0
     for i in range(0,len(self.hand)):
       value += Card.value(self.hand[i])
@@ -284,7 +274,7 @@ class Table(object):
   
   def __init__(self):
     self.canvas = Canvas(600, 400, 'dark green', 'Black Jack 101')
-    ## 14.
+    ## 14. (완료)
     ## self.player 이름의 Hand를 CARD_SIZE[0], CARD_SIZE[1]에 만드시오 // 핸드 오브젝트 만들라?
     ## self.dealer 이름의 Hand를 CARD_SIZE[0], 3 * CARD_SIZE[1]에 만드시오
     self.player = Hand(CARD_SIZE[0], CARD_SIZE[1], self.canvas)
@@ -323,8 +313,8 @@ class Table(object):
   def clear(self):
     """Clear everything on the table."""
     ## 15. player, dealer hand clear하고(핸드오브젝트 클리어 적용하라는것), message, question, score를 setMessage("") method 적용
-    self.player.hand.clear()
-    self.dealer.hand.clear()
+    self.player.hand.clear() ##
+    self.dealer.hand.clear() ##
     self.message.setMessage("")
     self.question.setMessage("")
     for i in range(0,len(self.score)):
@@ -337,7 +327,7 @@ class Table(object):
     self.score[which].setMessage(text)
     
   def show_message(self, text):
-    ## 17. message에 text를 setmessage하시오
+    ## 17. message에 text를 setmessage하시오 (완료)
     self.message.setMessage(text)
 
 
@@ -372,7 +362,6 @@ def blackjack(table):
 
   ##################### 블랙잭 한번의 라운드, player가 이기면 1을 반환, 딜러가 이기면 -1, 비기면 0 반환
 
-
   deck = Deck()
 
   # 18.
@@ -383,8 +372,9 @@ def blackjack(table):
   table.dealer.add(deck.draw(), hidden=True)
   table.player.add(deck.draw())
   table.dealer.add(deck.draw())
-  #table.set_score(0, text=table.player.value()) # 토탈 값 구해서 나타내는법
-  print(table.player.value()) # total 값은 구할 수 있음
+  table.set_score(0,str(table.player.value()))
+
+  print(table.player.value())
 
   
 
@@ -398,59 +388,68 @@ def blackjack(table):
   # dealer의 value가 17보다 작으면 더 뽑고, score를 set 해줌
   #i = 2
   while table.player.value() < 22:
-    #table.ask("Would you like another card?")
-    q = input("Would you like another card? ")
-    if q == "y":
+    q = table.ask("Would you like another card?")
+    if q:
       table.player.add(deck.draw())
-      print("You are dealt " + str(table.player.hand[len(table.player.hand)].face)) # 플레이어카드프린트 하는법
+      table.set_score(0,str(table.player.value()))
       print("your total is " + str(table.player.value()))
-      #i += 1
     else:
       print()
       print("Dealer's turn")
       print()
       break
 
-  if table.dealer.value() > 21:
-    print("You went over 21! You lost!")
-    print()
+  if table.player.value() > 21:
+    table.show_message("You went over 21! You lost!")
     return
+
+  #table.dealer.hand.show() #딜러카드 보여주기
+  print("The dealer's hidden card was " + str(table.dealer.hand[0]))
+  table.set_score(1,str(table.dealer.value()))
+  print("The dealer's total is " + str(table.player.value()))
   
-  '''print("The dealer's hidden card was " + str(dealer_cards[0]))
-  print("The dealer's total is " + str(hand_value(dealer_cards)))
-  i = 2
-  while hand_value(dealer_cards) < 17:
-    dealer_cards.append(deck.draw())
-    print("Dealer is dealt " + str(dealer_cards[i]))
-    i += 1'''
+
+  while table.dealer.value() < 17:
+    table.dealer.add(deck.draw())
+    table.set_score(1,str(table.dealer.value()))
 
 
 
   # 20.
   # player의 total 점수와, dealer의 total 점수를 set 해주고 
-  # "your total is 13"
-  # "The dealer's total is 20"
+  # "your total is 13" -> 메시지로 출력되야하나?
+  # "The dealer's total is 20" -> 메시지로 출력되야하나?
   # 플레이어와 딜러의 점수에 따라, 
   # "You win!" set하고 1 반환 혹은
   # "The dealer went over 21! You win!" set하고 1 반환 혹은
   # "You lost" set하고 -1 반환 혹은
   # "You have a tie" 를 set하고, 0 반환
-  '''print()
+  print()
   print("==============================================")
-  print("your total is " + str(hand_value(player_cards)))
-  print("The dealer's total is " + str(hand_value(dealer_cards)))
-  if (hand_value(dealer_cards)) > 21:
+
+  table.set_score(0,str(table.player.value()))
+  table.set_score(1,str(table.dealer.value()))
+
+  print("your total is " + str(table.player.value()))
+  #table.show_message("your total is " + str(table.player.value()))
+  print("The dealer's total is " + str(table.dealer.value()))
+  #table.show_message("The dealer's total is " + str(table.dealer.value()))
+  if (table.dealer.value()) > 21:
+    table.show_message("The dealer went over 21!, You win!")
     print("The dealer went over 21!, You win!")
     return 1
-  elif (21-(hand_value(player_cards))) < (21-(hand_value(dealer_cards))):
+  elif (21-(table.player.value())) < (21-(table.dealer.value())):
+    table.show_message("You win!")
     print("You win!")
     return 1
-  elif (hand_value(player_cards)) == (hand_value(dealer_cards)):
+  elif (table.player.value()) == (table.dealer.value()):
+    table.show_message("You have a tie")
     print("You have a tie")
     return 0
   else:
+    table.show_message("You lost")
     print("You lost")
-    return -1'''
+    return -1
 
 # --------------------------------------------------------------------
 
