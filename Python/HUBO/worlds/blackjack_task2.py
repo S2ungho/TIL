@@ -400,7 +400,7 @@ def blackjack(table):
     q = input("Would you like another card? ")
     if q == "y":
       table.player.add(deck.draw())
-      print("You are dealt " + str(table.player.value())) # 플레이어카드?
+      print("You are dealt " + str(table.player.hand[len(table.player.hand)].face)) # 플레이어카드?
       print("your total is " + str(table.player.value()))
       #i += 1
     else:
