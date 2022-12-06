@@ -204,8 +204,8 @@ class CardGraphics(object):
     rb_num.setMessage(num)
     rb_num.setFontColor(color)
     rb_num_dim = rb_num.getDimensions()
-    rb_num.moveTo(-CARD_SIZE[0]/2 + rb_num_dim[0]/2, 
-                   -CARD_SIZE[1]/2 + rb_num_dim[1]/2)
+    rb_num.moveTo(CARD_SIZE[0]/5 + rb_num_dim[0]/4, 
+                   CARD_SIZE[1]/3 + rb_num_dim[1]/3)  
     self.l.add(rb_num)
 
   def show(self):
