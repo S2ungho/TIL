@@ -75,51 +75,51 @@ def create_clubs(symbol):
   
 def create_diamonds(symbol):            
   ## 5. create diamonds
-  circle1 = Circle(RADIUS, Point(0, -RADIUS))
-  circle1.setFillColor('black')
+  '''circle1 = Circle(RADIUS, Point(0, -RADIUS))
+  circle1.setFillColor('red')
   circle1.setBorderWidth(0)
   symbol.add(circle1)
             
   circle2 = Circle(RADIUS, Point(-RADIUS, 0))
-  circle2.setFillColor('black')
+  circle2.setFillColor('red')
   circle2.setBorderWidth(0)
   symbol.add(circle2)
     
   circle3 = Circle(RADIUS, Point(RADIUS, 0))
-  circle3.setFillColor('black')
+  circle3.setFillColor('red')
   circle3.setBorderWidth(0)
-  symbol.add(circle3)
+  symbol.add(circle3)'''
   
   triangle = Polygon(Point(0, 0), 
                      Point(-RADIUS*2, RADIUS*3), 
                      Point(RADIUS*2, RADIUS*3))
-  triangle.setFillColor('black')
+  triangle.setFillColor('red')
   triangle.setBorderWidth(0)
   symbol.add(triangle)
         
 def create_hearts(symbol):
   ## 6. create hearts
-  circle1 = Circle(RADIUS, Point(0, -RADIUS))
-  circle1.setFillColor('black')
+  '''circle1 = Circle(RADIUS, Point(0, -RADIUS))
+  circle1.setFillColor('red')
   circle1.setBorderWidth(0)
-  symbol.add(circle1)
+  symbol.add(circle1)'''
             
   circle2 = Circle(RADIUS, Point(-RADIUS, 0))
-  circle2.setFillColor('black')
+  circle2.setFillColor('red')
   circle2.setBorderWidth(0)
   symbol.add(circle2)
     
   circle3 = Circle(RADIUS, Point(RADIUS, 0))
-  circle3.setFillColor('black')
+  circle3.setFillColor('red')
   circle3.setBorderWidth(0)
   symbol.add(circle3)
   
-  triangle = Polygon(Point(0, 0), 
+  '''triangle = Polygon(Point(0, 0), 
                      Point(-RADIUS*2, RADIUS*3), 
                      Point(RADIUS*2, RADIUS*3))
-  triangle.setFillColor('black')
+  triangle.setFillColor('red')
   triangle.setBorderWidth(0)
-  symbol.add(triangle)
+  symbol.add(triangle)'''
 
 def create_spades(symbol):        
   ## 7. create spades
@@ -138,12 +138,12 @@ def create_spades(symbol):
   circle3.setBorderWidth(0)
   symbol.add(circle3)
   
-  triangle = Polygon(Point(0, 0), 
+  '''triangle = Polygon(Point(0, 0), 
                      Point(-RADIUS*2, RADIUS*3), 
                      Point(RADIUS*2, RADIUS*3))
   triangle.setFillColor('black')
   triangle.setBorderWidth(0)
-  symbol.add(triangle)
+  symbol.add(triangle)'''
 
 # --------------------------------------------------------------------
 
@@ -180,7 +180,7 @@ class CardGraphics(object):
 
 
     # text for left-top and right-bottom
-    if card.suit in ['Diamonds', 'Hearts']:
+    if card.suit in ['Diamond', 'Hearts']:
       color = 'red'
     else:
       color = 'black'
@@ -383,7 +383,7 @@ def blackjack(table):
   table.dealer.add(deck.draw(), hidden=True)
   table.player.add(deck.draw())
   table.dealer.add(deck.draw())
-  table.set_score(0, text=Table().player.value)
+  table.set_score(0, text=table.player.value)
 
 
 
