@@ -166,12 +166,17 @@ class CardGraphics(object):
     self.l.add(self.bg)
     
     # 8. symbol for center, card suit에 맞는 symbol layer을 만들어서 self.l에 add하기
-    self.l.add(create_clubs(Card.value()))
-    self.l.add(create_diamonds(Card.value()))
-    self.l.add(create_hearts(Card.value()))
-    self.l.add(create_spades(Card.value()))
+    symbol = Layer()
+    if card.suit == 'Clubs':
+      create_clubs(symbol)
+    elif card.suit == 'Diamond':
+      create_diamonds(symbol)
+    elif card.suit == 'Hearts':
+      create_hearts(symbol)
+    elif card.suit == 'Spades':
+      create_spades(symbol)
 
-
+    self.l.add(symbol)
 
 
     # text for left-top and right-bottom
@@ -246,10 +251,10 @@ class Hand(object):                    ########## 테이블에서 보여지는 �
     # canvas에 그래픽을 추가하시오
     # graphics list에 해당 그래픽을 append하시오
     self.hand.append(card)
-    grp = CardGraphics(card) # 그래픽 만들기
-    (self.x + CARD_SIZE[0] * 2 * len(self.graphics), self.y) # 그래픽 이동시키기
-    r = Canvas.add(grp)
-    self.graphics.append(r) # 그래픽 리스트에 해당 그래픽 어팬드하기
+    grp = CardGraphics(card, hidden) # 그래픽 만들기
+    grp.l.moveTo(self.x + CARD_SIZE[0] * 2 * len(self.graphics), self.y) # 그래픽 이동시키기
+    self.canvas.add(grp.l)
+    self.graphics.append(grp) # 그래픽 리스트에 해당 그래픽 어팬드하기
 
 
 
@@ -282,8 +287,8 @@ class Table(object):
     ## 14.
     ## self.player 이름의 Hand를 CARD_SIZE[0], CARD_SIZE[1]에 만드시오 // 핸드 오브젝트 만들라?
     ## self.dealer 이름의 Hand를 CARD_SIZE[0], 3 * CARD_SIZE[1]에 만드시오
-    self.player = Hand(CARD_SIZE[0], CARD_SIZE[1])
-    self.dealer = Hand(CARD_SIZE[0], 3 * CARD_SIZE[1])
+    self.player = Hand(CARD_SIZE[0], CARD_SIZE[1], self.canvas)
+    self.dealer = Hand(CARD_SIZE[0], 3 * CARD_SIZE[1], self.canvas)
 
 
     self.score = [ Text(), Text() ]
@@ -378,7 +383,7 @@ def blackjack(table):
   table.dealer.add(deck.draw(), hidden=True)
   table.player.add(deck.draw())
   table.dealer.add(deck.draw())
-  table.player.set_score(0, text=table.player.value())
+  table.set_score(0, text=Table().player.value)
 
 
 
@@ -391,21 +396,21 @@ def blackjack(table):
   # 플레이어의 카드값이 21보다 크면 "You went over 21! You lost!"를 show하고 경기 끝  
   # 플레이어가 카드를 더이상 받지 않으면, dealer의 hidden card를 보여주고 dealer의 score를 set 함
   # dealer의 value가 17보다 작으면 더 뽑고, score를 set 해줌
-  i = 2
-  while Hand.value(Table().player) < 22:
+  #i = 2
+  '''while table.player.value() < 22:
     q = input("Would you like another card? ")
     if q == "y":
-      Table().player.add(deck.draw())
-      print("You are dealt " + str(Table().player[i]))
-      print("your total is " + str(Hand.value(Table().player)))
-      i += 1
+      table.player.add(deck.draw())
+      print("You are dealt " + str(table.player.value())) # 플레이어카드?
+      print("your total is " + str(table.player.value()))
+      #i += 1
     else:
       print()
       print("Dealer's turn")
       print()
       break
 
-  if Hand.value(Table().player) > 21:
+  if table.dealer.value() > 21:
     print("You went over 21! You lost!")
     print()
     return
@@ -436,7 +441,7 @@ def blackjack(table):
     return 0
   else:
     print("You lost")
-    return -1
+    return -1'''
 
 # --------------------------------------------------------------------
 
