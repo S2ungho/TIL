@@ -383,7 +383,7 @@ def blackjack(table):
   table.dealer.add(deck.draw(), hidden=True)
   table.player.add(deck.draw())
   table.dealer.add(deck.draw())
-  #table.set_score(0, text=table.player.value()) # total print
+  #table.set_score(0, text=table.player.value()) # 토탈 값 구해서 나타내는법
   print(table.player.value()) # total 값은 구할 수 있음
   
 
@@ -400,7 +400,7 @@ def blackjack(table):
     q = input("Would you like another card? ")
     if q == "y":
       table.player.add(deck.draw())
-      print("You are dealt " + str(table.player.hand[len(table.player.hand)].face)) # 플레이어카드?
+      #print("You are dealt " + str(table.player.hand[len(table.player.hand)].face)) # 플레이어카드프린트 하는법
       print("your total is " + str(table.player.value()))
       #i += 1
     else:
@@ -413,6 +413,14 @@ def blackjack(table):
     print("You went over 21! You lost!")
     print()
     return
+  
+  '''print("The dealer's hidden card was " + str(dealer_cards[0]))
+  print("The dealer's total is " + str(hand_value(dealer_cards)))
+  i = 2
+  while hand_value(dealer_cards) < 17:
+    dealer_cards.append(deck.draw())
+    print("Dealer is dealt " + str(dealer_cards[i]))
+    i += 1'''
 
 
 
@@ -425,7 +433,7 @@ def blackjack(table):
   # "The dealer went over 21! You win!" set하고 1 반환 혹은
   # "You lost" set하고 -1 반환 혹은
   # "You have a tie" 를 set하고, 0 반환
-  '''print()
+  print()
   print("==============================================")
   print("your total is " + str(hand_value(player_cards)))
   print("The dealer's total is " + str(hand_value(dealer_cards)))
@@ -440,7 +448,7 @@ def blackjack(table):
     return 0
   else:
     print("You lost")
-    return -1'''
+    return -1
 
 # --------------------------------------------------------------------
 
