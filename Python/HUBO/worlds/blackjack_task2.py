@@ -276,7 +276,7 @@ class Hand(object):                    ########## 테이블에서 보여지는 �
     ## 13. total value를 반환하시오
     value = 0
     for i in range(0,len(self.hand)):
-      value += int(self.hand[i].value())
+      value += self.hand[i].face
     return value
 # --------------------------------------------------------------------
 class Table(object):
@@ -383,10 +383,9 @@ def blackjack(table):
   table.dealer.add(deck.draw(), hidden=True)
   table.player.add(deck.draw())
   table.dealer.add(deck.draw())
-  table.set_score(0, text=table.player.value)
-
-
-
+  #table.set_score(0, text=table.player.value()) # total print
+  print(table.player.value()) # total 값은 구할 수 있음
+  
 
   # 19.
   # player's turn to draw cards
@@ -397,7 +396,7 @@ def blackjack(table):
   # 플레이어가 카드를 더이상 받지 않으면, dealer의 hidden card를 보여주고 dealer의 score를 set 함
   # dealer의 value가 17보다 작으면 더 뽑고, score를 set 해줌
   #i = 2
-  '''while table.player.value() < 22:
+  while table.player.value() < 22:
     q = input("Would you like another card? ")
     if q == "y":
       table.player.add(deck.draw())
@@ -426,7 +425,7 @@ def blackjack(table):
   # "The dealer went over 21! You win!" set하고 1 반환 혹은
   # "You lost" set하고 -1 반환 혹은
   # "You have a tie" 를 set하고, 0 반환
-  print()
+  '''print()
   print("==============================================")
   print("your total is " + str(hand_value(player_cards)))
   print("The dealer's total is " + str(hand_value(dealer_cards)))
