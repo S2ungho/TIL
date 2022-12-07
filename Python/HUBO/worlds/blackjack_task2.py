@@ -258,6 +258,9 @@ class Hand(object):                    ########## 테이블에서 보여지는 �
   def show(self):
     """Make all cards visible."""
     ## 12. 모든 그래픽을 보이게 하시오 //딜러카드 히든, 힌트 : 뎁스 사용
+    self.graphics[1].show()
+    #self.bg.setDepth(100)
+    #self.bg.setFillColor('white')
 
     
 
@@ -386,7 +389,6 @@ def blackjack(table):
   # 플레이어의 카드값이 21보다 크면 "You went over 21! You lost!"를 show하고 경기 끝  
   # 플레이어가 카드를 더이상 받지 않으면, dealer의 hidden card를 보여주고 dealer의 score를 set 함
   # dealer의 value가 17보다 작으면 더 뽑고, score를 set 해줌
-  #i = 2
   while table.player.value() < 22:
     q = table.ask("Would you like another card?")
     if q:
@@ -403,7 +405,7 @@ def blackjack(table):
     table.show_message("You went over 21! You lost!")
     return
 
-  #table.dealer.hand.show() #딜러카드 보여주기
+  table.dealer.show() #딜러카드 보여주기
   print("The dealer's hidden card was " + str(table.dealer.hand[0]))
   table.set_score(1,str(table.dealer.value()))
   print("The dealer's total is " + str(table.player.value()))
