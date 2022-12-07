@@ -313,8 +313,8 @@ class Table(object):
   def clear(self):
     """Clear everything on the table."""
     ## 15. player, dealer hand clear하고(핸드오브젝트 클리어 적용하라는것), message, question, score를 setMessage("") method 적용
-    self.player.hand.clear() ##
-    self.dealer.hand.clear() ##
+    self.player.clear()
+    self.dealer.clear()
     self.message.setMessage("")
     self.question.setMessage("")
     for i in range(0,len(self.score)):
