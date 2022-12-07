@@ -376,8 +376,12 @@ def blackjack(table):
   table.player.add(deck.draw())
   table.dealer.add(deck.draw())
   table.set_score(0,str(table.player.value()))
+  if table.player.value() == 21: # 처음 뽑은 카드 합이 21이면 블랙잭
+    table.show_message(" LUCKY BAKCK JACK! You Win!")
+    print(" LUCKY BAKCK JACK! You Win!")
+    return 1
 
-  print(table.player.value())
+  print(table.player.value()) # 확인용
 
   
 
@@ -405,7 +409,7 @@ def blackjack(table):
     table.show_message("You went over 21! You lost!")
     return
 
-  table.dealer.show() #딜러카드 보여주기y
+  table.dealer.show() #딜러카드 보여주기
   print("The dealer's hidden card was " + str(table.dealer.hand[0]))
   table.set_score(1,str(table.dealer.value()))
   print("The dealer's total is " + str(table.player.value()))
