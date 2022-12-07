@@ -405,7 +405,7 @@ def blackjack(table):
     table.show_message("You went over 21! You lost!")
     return
 
-  table.dealer.show() #딜러카드 보여주기
+  table.dealer.show() #딜러카드 보여주기y
   print("The dealer's hidden card was " + str(table.dealer.hand[0]))
   table.set_score(1,str(table.dealer.value()))
   print("The dealer's total is " + str(table.player.value()))
