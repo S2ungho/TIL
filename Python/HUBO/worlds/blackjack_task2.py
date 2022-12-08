@@ -259,8 +259,6 @@ class Hand(object):                    ########## 테이블에서 보여지는 �
     """Make all cards visible."""
     ## 12. 모든 그래픽을 보이게 하시오 //딜러카드 히든, 힌트 : 뎁스 사용
     self.graphics[1].show()
-    #self.bg.setDepth(100)
-    #self.bg.setFillColor('white')
 
     
 
