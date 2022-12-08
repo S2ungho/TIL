@@ -376,7 +376,7 @@ def blackjack(table):
   table.set_score(0,str(table.player.value()))
   if table.player.value() == 21: # 처음 뽑은 카드 합이 21이면 블랙잭
     table.show_message(" LUCKY BAKCK JACK! You Win!")
-    print(" LUCKY BAKCK JACK! You Win!")
+    print(" LUCKY BAKCK JACK! You Win!") # 확인용
     return 1
 
   print(table.player.value()) # 확인용
@@ -396,10 +396,10 @@ def blackjack(table):
     if q:
       table.player.add(deck.draw())
       table.set_score(0,str(table.player.value()))
-      print("your total is " + str(table.player.value()))
+      print("your total is " + str(table.player.value())) # 확인용
     else:
       print()
-      print("Dealer's turn")
+      print("Dealer's turn") # 확인용
       print()
       break
 
@@ -408,9 +408,9 @@ def blackjack(table):
     return
 
   table.dealer.show() #딜러카드 보여주기
-  print("The dealer's hidden card was " + str(table.dealer.hand[0]))
+  print("The dealer's hidden card was " + str(table.dealer.hand[0])) # 확인용
   table.set_score(1,str(table.dealer.value()))
-  print("The dealer's total is " + str(table.player.value()))
+  print("The dealer's total is " + str(table.player.value())) # 확인용
   
 
   while table.dealer.value() < 17:
@@ -429,30 +429,28 @@ def blackjack(table):
   # "You lost" set하고 -1 반환 혹은
   # "You have a tie" 를 set하고, 0 반환
   print()
-  print("==============================================")
+  print("==============================================") # 확인용
 
-  table.set_score(0,str(table.player.value()))
-  table.set_score(1,str(table.dealer.value()))
+  #table.set_score(0,str(table.player.value()))
+  #table.set_score(1,str(table.dealer.value()))
 
-  print("your total is " + str(table.player.value()))
-  #table.show_message("your total is " + str(table.player.value()))
-  print("The dealer's total is " + str(table.dealer.value()))
-  #table.show_message("The dealer's total is " + str(table.dealer.value()))
+  print("your total is " + str(table.player.value())) # 확인용
+  print("The dealer's total is " + str(table.dealer.value())) # 확인용
   if (table.dealer.value()) > 21:
     table.show_message("The dealer went over 21!, You win!")
-    print("The dealer went over 21!, You win!")
+    print("The dealer went over 21!, You win!")# 확인용
     return 1
   elif (21-(table.player.value())) < (21-(table.dealer.value())):
     table.show_message("You win!")
-    print("You win!")
+    print("You win!")# 확인용
     return 1
   elif (table.player.value()) == (table.dealer.value()):
     table.show_message("You have a tie")
-    print("You have a tie")
+    print("You have a tie")# 확인용
     return 0
   else:
     table.show_message("You lost")
-    print("You lost")
+    print("You lost")# 확인용
     return -1
 
 # --------------------------------------------------------------------
