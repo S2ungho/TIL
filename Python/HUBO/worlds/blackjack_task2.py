@@ -392,7 +392,7 @@ def blackjack(table):
   # 플레이어가 카드를 더이상 받지 않으면, dealer의 hidden card를 보여주고 dealer의 score를 set 함
   # dealer의 value가 17보다 작으면 더 뽑고, score를 set 해줌
   while table.player.value() < 22:
-    q = table.ask("Would you like another card?")
+    q = table.ask("Would you like another card? (yes or no)")
     if q:
       table.player.add(deck.draw())
       table.set_score(0,str(table.player.value()))
@@ -459,7 +459,7 @@ def game_loop():
   table = Table()
   while True:
     blackjack(table)
-    if not table.ask("Another round?"):
+    if not table.ask("Another round? (yes or no)"):
       break    
     table.clear()
   table.close()
