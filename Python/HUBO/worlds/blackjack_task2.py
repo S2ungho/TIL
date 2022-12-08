@@ -421,8 +421,8 @@ def blackjack(table):
 
   # 20.
   # player의 total 점수와, dealer의 total 점수를 set 해주고 
-  # "your total is 13" -> 메시지로 출력되야하나?
-  # "The dealer's total is 20" -> 메시지로 출력되야하나?
+  # "your total is 13"
+  # "The dealer's total is 20"
   # 플레이어와 딜러의 점수에 따라, 
   # "You win!" set하고 1 반환 혹은
   # "The dealer went over 21! You win!" set하고 1 반환 혹은
