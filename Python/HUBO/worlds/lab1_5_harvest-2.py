@@ -1,4 +1,5 @@
 from cs1robots import *
+import time
 
 load_world("Python/HUBO/worlds/harvest2.wld")
 count=0
@@ -41,6 +42,7 @@ def diamond(robot, n):
   robot.move()
   count+=1
   robot.turn_left()
+  time.sleep(5)
 
 def diamond_rev(robot, n):
   for i in range(3):
