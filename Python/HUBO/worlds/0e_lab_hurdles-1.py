@@ -1,6 +1,6 @@
 
 from cs1robots import *
-load_world("./worlds/hurdles1.wld")
+load_world("Python/HUBO/worlds/hurdles1.wld")
 
 hubo = Robot()
 hubo.set_trace("blue")

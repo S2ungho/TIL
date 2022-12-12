@@ -1,6 +1,6 @@
 from cs1robots import*
 import time
-load_world("./worlds/newspaper.wld")
+load_world("Python/HUBO/worlds/newspaper.wld")
 
 hubo = Robot(beepers = 1)
 
@@ -24,9 +24,13 @@ def climb_down_four_stairs():
   
 def climb_up_one_stair():
   hubo.turn_left()
+  time.sleep(0.5)
   hubo.move()
+  time.sleep(0.5)
   turn_right()
+  time.sleep(0.5)
   hubo.move()
+  time.sleep(0.5)
   hubo.move()
 
 def climb_down_one_stair():
@@ -36,6 +40,7 @@ def climb_down_one_stair():
   hubo.move()
   turn_right()
 
+time.sleep(2)
 climb_up_four_stairs()
 hubo.move()
 hubo.drop_beeper()
