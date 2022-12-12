@@ -1,7 +1,7 @@
 from cs1robots import *
 import time
 #create_world()
-load_world("./worlds/harvest3.wld")
+load_world("Python/HUBO/worlds/harvest3.wld")
 
 hubo = Robot(beepers=10)
 hubo.set_trace("blue")

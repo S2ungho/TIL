@@ -1,6 +1,6 @@
 from cs1robots import *
 #create_world()
-load_world("./worlds/harvest4.wld")
+load_world("Python/HUBO/worlds/harvest4.wld")
 
 hubo = Robot()
 hubo.set_trace("blue")

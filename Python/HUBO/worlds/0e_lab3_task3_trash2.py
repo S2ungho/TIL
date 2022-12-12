@@ -1,5 +1,5 @@
 from cs1robots import *
-load_world("./worlds/yardwork.wld")
+load_world("Python/HUBO/worlds/yardwork.wld")
 
 hubo = Robot()
 hubo.set_trace("blue")

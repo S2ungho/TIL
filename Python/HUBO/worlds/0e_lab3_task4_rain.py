@@ -1,6 +1,6 @@
 import time
 from cs1robots import *
-load_world("./worlds/rain2.wld")
+load_world("Python/HUBO/worlds/rain2.wld")
 hubo = Robot(beepers = 10,avenue=3,street=6,orientation="E")
 
 def turn_right(robot):
