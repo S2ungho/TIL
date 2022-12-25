@@ -37,3 +37,6 @@ hubo.move()
 zig()
 zig()
 zigzag()
+
+##ㅁㄴㅇㅁㄴㅇ
+##$$asdasd
