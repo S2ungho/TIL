@@ -2,6 +2,7 @@
  * @author Ham SeungHo
  * @assignment JAVAProgramming- LABX
  * @date 2022..09.13
+ * @delete_
  **/
 import java.util.Random; //Random 클래스 사용
 
