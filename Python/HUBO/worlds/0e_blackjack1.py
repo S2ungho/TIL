@@ -1,6 +1,5 @@
-#
 # Blackjack Game
-#
+
 
 import random
 
