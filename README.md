@@ -29,10 +29,10 @@
 ## 📌 Data Structure
 * **선형 자료구조 (Linear)**
   + **List**
-    + [배열 리스트 (파이썬 기본 제공)]()
-    + [연결 리스트 (Linked List)]()
-    + [원형 연결 리스트 (Circular Linked List)]()
-    + [양방향 연결 리스트 (Circular Doubly Linked List)]()
+    + [❌배열 리스트 (파이썬 기본 제공)]()
+    + [❌연결 리스트 (Linked List)]()
+    + [❌원형 연결 리스트 (Circular Linked List)]()
+    + [❌양방향 연결 리스트 (Circular Doubly Linked List)]()
   + **Stack**
     + _
   + **Queue**
