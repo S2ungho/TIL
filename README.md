@@ -1,6 +1,6 @@
 # ⭐️ Today I Learned(TIL)
     🌟 오늘 배운 내용은 오늘 기록하기
-## ⭐️ 몰랐던, 기억해야할 내용들
+## ⭐️ 몰랐던, 기억해야할 내용들ㄴ
 * [[JAVA]상속의 업캐스팅](./Remind/Remind_Upcasting.md)
 * [[JAVA]인터페이스와 추상클래스](./Remind/Remind_Inter_abst.md)
 * [[JAVA]래그드 배열, ArrayList](./Remind/Remind_Rag_AL.md)
