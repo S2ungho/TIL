@@ -45,7 +45,7 @@
   + [고급 정렬 (Θ(nlogn))](./DataStructure/Sort_2.md)
   + [특수 정렬 (Θ(n))](./DataStructure/Sort_3.md)
 ## 📌 Spring
-* Spring boot
+* 
 ## 📌 etc.
 * **System error**
   + [msvcp140.dll](./etc/msvcp140.md)
