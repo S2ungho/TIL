@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="exchange_rates">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Python/HUBO/worlds/data/exchange_rates.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
