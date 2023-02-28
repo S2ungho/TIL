@@ -5,7 +5,7 @@
 * [[JAVA]인터페이스와 추상클래스](./Remind/Remind_Inter_abst.md)
 * [[JAVA]래그드 배열, ArrayList](./Remind/Remind_Rag_AL.md)
 ## 📌 Java
-* **자바 복습**(./Java)
+* [**자바 복습**](./Java)
 * **클래스(Class)**
 * **OPP(Object-Oriented Programming)**
 * **상속(Inheritance)**
