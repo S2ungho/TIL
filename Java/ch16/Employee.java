@@ -12,6 +12,8 @@ public class Employee {
     }
 
     public static int getSerialNum() {
+        int i = 0;
+        //employeeName = "Lee"; //정적 변수 안에서 일반 멤버 사용 불가능, 지역 변수는 가능
         return serialNum;
     }
 
