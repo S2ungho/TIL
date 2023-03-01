@@ -9,7 +9,7 @@
 # ✏️ 패키지 사용
 * 패키지 사용 예시
 
-<img src="../0_Java/Package_1.png" width="350px" height="250px" title="px(픽셀) 크기 설정" alt="package_ex"/>
+<img src="../Java_Lab/Package_1.png" width="350px" height="250px" title="px(픽셀) 크기 설정" alt="package_ex"/>
 
 * **Class - Bicycle**
   + package Bicycle을 통해 패키지 선언을 해준다. (아래 클래스도 마찬가지)
