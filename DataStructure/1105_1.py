@@ -62,5 +62,3 @@ class Heap:
 
         def size(self) -> int:
                 return len(self.__A)
-
-# 코드 8-8
