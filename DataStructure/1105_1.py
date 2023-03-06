@@ -50,7 +50,7 @@ class Heap:
 
         # 힙 만들기
         def buildHeap(self):
-                for i in range((len(self.__A) - 2) // 2, -1, -1):
+                for i ing range((len(self.__A) - 2) // 2, -1, -1):
                         self.__percolateDown(i)
 
         # 힙이 비었는지 확인하기
